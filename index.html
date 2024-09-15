@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button style="width: 100px; height: 100px;">КНОПКА</button>
+    <script>
+        let button = document.querySelector('button');
+        button.addEventListener("click",getData)
+        async function getData() {
+            let res = fetch("/sg",{"Conetnt-Type": "text/plain", method: "POST", body:'Server request'})
+            .then(res => res.text())
+            .then(data => console.log(data))
+        }
+    </script>
+</body>
+</html>
